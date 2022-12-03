@@ -60,7 +60,7 @@ def Day2():
         elif line[0] == "C" and line[2] == "X":
             workingScore += 6
 
-    print(workingScore)
+    print("Part 1: " + str(workingScore))
 
     # For Part 2
 
@@ -93,10 +93,9 @@ def Day2():
             elif line[0] == "C":
                 workingScore += 1 + 6
 
-    print(workingScore)
+    print("Part 2 : " + str(workingScore))
 
 
-    print(lines)
 
 def Day3():
 
