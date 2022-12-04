@@ -150,6 +150,48 @@ def Day3():
 
     print(sum)
 
+def Day4():
+
+    file = "Inputs/Day4.txt"
+
+    with open(file) as f:
+        lines = f.read().splitlines()
+
+    count = 0
+    count2 = 0
+    for line in lines:
+        line = line.split(",")
+        pairs = []
+
+        workingMin = 1e9
+        workingMax = -1e9
+
+        for subline in line:
+            subline = subline.split("-")
+            subline[0] = int(subline[0])
+            subline[1] = int(subline[1])
+
+            pairs.append(subline)
+
+        if (pairs[0][0] >= pairs[1][0] and pairs[0][1] <= pairs[1][1]) or (pairs[0][0] <= pairs[1][0] and pairs[0][1] >= pairs[1][1]):
+            count += 1
+            count2 += 1
+        elif (pairs[0][0] >= pairs[1][1] and pairs[0][1] <= pairs[1][0]) or (pairs[0][0] <= pairs[1][1] and pairs[0][1] >= pairs[1][0]):
+            count2 += 1
+
+    print(count)
+    print(count2)
+
+def Day5():
+    return 0
+
+
+
+
+
+
+
+
 
 
 
