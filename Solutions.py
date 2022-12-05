@@ -234,15 +234,28 @@ def Day5():
 
         if currentRow == 9:
             for i in range(len(stacks)):
-                if " " in stacks[i]:
-                    stacks[i].remove(" ")
-                    continue
+                for j in range(len(stacks[i])):
+                    if " " in stacks[i]:
+                        stacks[i].remove(" ")
+
+
 
 
         elif currentRow > 10:
             row=row.replace("move ", "").replace("from ", "").replace("to ", "")
             row=row.split(" ")
             orders.append(row)
+            #print(row)
+            origin = int(row[1]) - 1
+            dest = int(row[2]) - 1
+            load = int(row[0])
+
+            for i in range(load):
+                continue
+
+
+
+
 
 
 
