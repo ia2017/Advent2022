@@ -183,7 +183,69 @@ def Day4():
     print(count2)
 
 def Day5():
-    return 0
+
+    file = "Inputs/Day5.txt"
+
+    with open(file) as f:
+        lines = f.read().splitlines()
+
+    currentRow = 0
+
+    stacks = [[],[],[],[],[],[],[],[],[]]
+    orders = []
+
+    stack1 = []
+    stack2 = []
+    stack3 = []
+    stack4 = []
+    stack5 = []
+    stack6 = []
+    stack7 = []
+    stack8 = []
+    stack9 = []
+
+    delta = 4
+    for row in lines:
+
+        currentRow += 1
+
+        if currentRow < 9:
+
+            if currentRow > 4:
+                stacks[0].append(row[1])
+                stacks[1].append(row[1 + delta])
+                stacks[2].append(row[1 + delta * 2])
+                stacks[3].append(row[1 + delta * 3])
+                stacks[4].append(row[1 + delta * 4])
+                stacks[5].append(row[1 + delta * 5])
+                stacks[6].append(row[1 + delta * 6])
+                stacks[7].append(row[1 + delta * 7])
+                stacks[8].append(row[1+ delta*8])
+
+            else:
+                stacks[0].append(row[1])
+                stacks[1].append(row[1 + delta])
+                stacks[2].append(row[1 + delta * 2])
+                stacks[3].append(row[1 + delta * 3])
+                stacks[4].append(row[1 + delta * 4])
+                stacks[5].append(row[1 + delta * 5])
+                stacks[6].append(row[1 + delta * 6])
+                stacks[7].append(row[1 + delta * 7])
+
+        if currentRow == 9:
+            for i in range(len(stacks)):
+                if " " in stacks[i]:
+                    stacks[i].remove(" ")
+                    continue
+
+
+        elif currentRow > 10:
+            row=row.replace("move ", "").replace("from ", "").replace("to ", "")
+            row=row.split(" ")
+            orders.append(row)
+
+
+
 
 
 
